@@ -1,0 +1,43 @@
+<div class="example-container mat-elevation-z8">
+  <div class="example-loading-shade"
+       *ngIf="isLoadingResults">
+    <mat-spinner *ngIf="isLoadingResults"></mat-spinner>
+  </div>
+  <div class="button-row">
+    <a mat-flat-button color="primary" [routerLink]="['/supplier']"><mat-icon>list</mat-icon></a>
+  </div>
+  <mat-card class="example-card">
+    <mat-card-header>
+      <mat-card-title><h2> ID: {{supplier.supplierId}}</h2></mat-card-title>
+      <mat-card-subtitle> Nome: {{supplier.companyName}}</mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>
+      <dl>
+        <dt>Contato:</dt>
+        <dd>{{supplier.contactName}}</dd>
+        <dt>Titulo:</dt>
+        <dd>{{supplier.contactTitle}}</dd>
+        <dt>Endereço:</dt>
+        <dd>{{supplier.address}}</dd>
+        <dt>Cidade:</dt>
+        <dd>{{supplier.city}}</dd>
+        <dt>Região:</dt>
+        <dd>{{supplier.region}}</dd>
+        <dt>Cep:</dt>
+        <dd>{{supplier.postalCode}}</dd>
+        <dt>País:</dt>
+        <dd>{{supplier.country}}</dd>
+        <dt>Tel:</dt>
+        <dd>{{supplier.phone}}</dd>
+        <dt>Fax:</dt>
+        <dd>{{supplier.fax}}</dd>
+        <dt>Home page:</dt>
+        <dd>{{supplier.homePage}}</dd>
+      </dl>
+    </mat-card-content>
+    <mat-card-actions>
+      <a mat-flat-button color="primary" [routerLink]="['/supplier-edit', supplier.supplierId || 'all']"><mat-icon>edit</mat-icon></a>
+      <a mat-flat-button color="warn" (click)="deleteSupplier(supplier.supplierId)"><mat-icon>delete</mat-icon></a>
+    </mat-card-actions>
+  </mat-card>
+</div>
