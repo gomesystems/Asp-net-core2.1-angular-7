@@ -1,5 +1,5 @@
 # Web App - ASP.NET core 2.1 Web API - Angular 7 - SQL Server
-
+DocumentaÃ§Ã£o rascunho
 > ASP.NET Core SDK
 > Visual Studio Code
 > Node.js
@@ -9,7 +9,7 @@
 > Command prompt (CMD)
 
 #criar novo app
-dotnet new webapi –o AspNetAngular –n AspNetAngular 
+dotnet new webapi â€“o AspNetAngular â€“n AspNetAngular 
 
 #no terminal ou vs code instalar os seguntes pacotes:
 dotnet add package Microsoft.EntityFrameworkCore.Tools -v 2.1.2 
@@ -21,7 +21,7 @@ dotnet add package AutoMapper.Extensions.Microsoft.DependencyInjection -v 5.0.1
 
 #dotnet build
 
-#conexão no appsetings.json
+#conexÃ£o no appsetings.json
 "ConnectionStrings": { "SQLConnection": "Server=.;Database=NORTHWND;Trusted_Connection=True;User Id=sa;Password=q;Integrated Security=false;MultipleActiveResultSets=true" },
 ou 
  "ConnectionStrings": {"SQLConnection": "Server=DESKTOP-L6MG1RO\\SQLEXPRESS;Database=NORTHWND;Trusted_Connection=True;"}
@@ -29,10 +29,10 @@ ou
 #Abra e edite o arquivo `Startup.cs` e adicione esta linha dentro do suporte do` ConfigureServices`.
 
  services.AddDbContext<NORTHWNDContext>(options => options.UseSqlServer(Configuration.GetConnectionString("SQLConnection"))); 
-Em seguida, adicione esta linha para ativar o CORS após a linha acima.
+Em seguida, adicione esta linha para ativar o CORS apÃ³s a linha acima.
 
  services.AddCors(); 
-Adicione também esta linha dentro do suporte `Configure`.
+Adicione tambÃ©m esta linha dentro do suporte `Configure`.
  app.UseCors(x => x.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod()); 
 
 #com scaffold Execute este comando para gerar os modelos e seu contexto.
@@ -42,5 +42,5 @@ dotnet ef dbcontext scaffold "Server=DESKTOP-L6MG1RO\SQLEXPRESS;Database=NORTHWN
 
 #NORTHWNDContext.cs`  dentro da pasta Models
 
-#repositórios para operações CRUD
+#repositÃ³rios para operaÃ§Ãµes CRUD
 #dotnet watch run , localhost: 5000 / api / Supplier pega o json retornado para teste no sweeger
